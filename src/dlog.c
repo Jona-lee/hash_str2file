@@ -2,7 +2,6 @@
  *
  *  Copyright (c) 2013 javenly@gmail.com
  * 
- *  Mostly socket code based on original code from apue.2e
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
