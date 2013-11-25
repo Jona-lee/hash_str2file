@@ -5,7 +5,7 @@ A simple tools for add/delete a strings to a hash table.
 
 #Function
 A simple tools for add/delete a strings to/from a hash-table, also  
-you can commit the hash-talbe to a file. the strings can be the  
+you can commit the hash-table to a file. the strings can be the  
 formats like "string1=string2". the tools include a client command  
 'hs' and a server monitor 'hms_monitor'. you should start hms_monitor  
 first, eg: ./hms_monitor & then you can use command 'hs' to add/delete  
