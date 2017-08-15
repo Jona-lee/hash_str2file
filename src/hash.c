@@ -206,7 +206,7 @@ unsigned int str_hash_get(const char *name, char *value_ptr, int buf_len)
 	return 0;
 }
 
-unsigned int str_hash_dump()
+unsigned int str_hash_dump(void)
 {
 	struct hash_tuple *t;
 	int i;

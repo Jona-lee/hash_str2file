@@ -32,5 +32,6 @@ enum l_level
 typedef enum l_level llevel_t;
 
 extern int dlog(llevel_t level, const char *fmt, ...);
+extern int set_dlog_level (int level);
 #endif
 

@@ -25,8 +25,10 @@ struct hash_tuple {
 	struct hash_tuple *next;
 };
 
+extern unsigned int str_hash_init(const char *fpath);
 extern unsigned int str_hash_add(const char *name, const char *value);
 extern unsigned int str_hash_del(const char *name);
 extern unsigned int str_hash_commit(const char *fpath);
-
+extern unsigned int str_hash_dump(void);
+extern unsigned int str_hash_get(const char *name, char *value_ptr, int buf_len);
 #endif
