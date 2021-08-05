@@ -12,16 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Make hash_str2file
     - uses: actions/checkout@v2
+    - name: Make hash_str2file
       run: make
-
-    - name: Archive Binary Artifacts
-    - uses: actions/download-artifact@v2
-      id: download
-      with:
-        name: 'my-artifact'
-        path: ./
-
-    - name: 'Echo download path'
-      run: echo ${{steps.download.outputs.download-path}}
