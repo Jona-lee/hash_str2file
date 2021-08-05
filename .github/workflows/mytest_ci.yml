@@ -22,7 +22,9 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: hash_str2file_b
-        path: hs
+        path: |
+          hs
+          src
 
     - uses: actions/download-artifact@v2.0.10
       with:
