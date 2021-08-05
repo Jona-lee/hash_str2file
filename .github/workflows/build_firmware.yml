@@ -1,0 +1,24 @@
+name: Build Firmware
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Make hash_str2file
+      run: make
+
+    - name: Archive Binary
+      uses: actions/upload-artifact@v2
+      with:
+        name: hash_str2file_b
+        path: |
+          hs
