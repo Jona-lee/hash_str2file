@@ -12,9 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout repository and Make
     - uses: actions/checkout@v2
-
     - name: Make hash_str2file
       run: make
 
