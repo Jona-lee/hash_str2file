@@ -16,6 +16,8 @@ jobs:
     - name: make
       run: make
 
+    - uses: actions/checkout@v2
+
     - uses: actions/download-artifact@v2
       id: download
       with:
