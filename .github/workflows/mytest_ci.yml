@@ -16,8 +16,6 @@ jobs:
     - name: Make hash_str2file
       run: make
 
-    - uses: actions/checkout@v2
-
     - name: Archive Binary
       uses: actions/upload-artifact@v2
       with:
