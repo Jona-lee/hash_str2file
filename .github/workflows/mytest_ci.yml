@@ -12,12 +12,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout repository
     - uses: actions/checkout@v2
-    - name: make
+
+    - name: Make hash_str2file
       run: make
 
-    - uses: actions/checkout@v2
-
+    - name: Archive Binary Artifacts
     - uses: actions/download-artifact@v2
       id: download
       with:
