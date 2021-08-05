@@ -25,8 +25,12 @@ jobs:
           src
 
     - uses: actions/download-artifact@v2.0.10
+      id: download
       with:
         name: hash_str2file_b
 
     - name: Display structure of downloaded files
       run: ls -R
+
+    - name: 'Echo download path'
+      run: echo ${{steps.download.outputs.download-path}}
