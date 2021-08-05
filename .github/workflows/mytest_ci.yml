@@ -23,7 +23,7 @@ jobs:
       id: download
       with:
         name: 'my-artifact'
-        path: hs
+        path: ./
 
     - name: 'Echo download path'
       run: echo ${{steps.download.outputs.download-path}}
