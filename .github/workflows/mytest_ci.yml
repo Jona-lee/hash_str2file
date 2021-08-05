@@ -18,9 +18,15 @@ jobs:
 
     - uses: actions/checkout@v2
 
+    - name: Archive Binary
+      uses: actions/upload-artifact@v2
+      with:
+        name: hash_str2file_b
+        path: hs
+
     - uses: actions/download-artifact@v2.0.10
       with:
-        name: my-artifact
+        name: hash_str2file_b
 
     - name: Display structure of downloaded files
       run: ls -R
