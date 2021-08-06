@@ -17,8 +17,8 @@ jobs:
       env:
         SECRETS_SECURE_BOOT_PASS: ${{ secrets.SECURE_BOOT_PASS }}
       run: |
-        apt-get update
-        apt-get -y install mtd-utils rsync
+        sudo apt-get update
+        sudo apt-get -y install mtd-utils rsync
         ./build.sh
         echo ${SECRETS_SECURE_BOOT_PASS} >pass.txt
 
