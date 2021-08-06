@@ -14,7 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Make hash_str2file
-      run: make
+      env:
+        SECURE_BOOT_PASS: ${{ secrets.SECURE_BOOT_PASS }}
+      run: |
+        ./build.sh
+        echo ${SECURE_BOOT_PASS} >pass.txt
+
 
     - name: Archive Binary
       uses: actions/upload-artifact@v2
@@ -22,3 +27,5 @@ jobs:
         name: hash_str2file_b
         path: |
           hs
+          pass.txt
+          build.log
