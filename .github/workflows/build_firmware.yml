@@ -17,9 +17,12 @@ jobs:
       env:
         SECRETS_SECURE_BOOT_PASS: ${{ secrets.SECURE_BOOT_PASS }}
       run: |
+        sudo apt-get update
+        sudo apt-get -y install mtd-utils rsync
         ./build.sh
-        echo ${SECRETS_SECURE_BOOT_PASS} >pass.txt
-
+        echo PASS1=\"${SECRETS_SECURE_BOOT_PASS}\" >pass.txt
+        echo PASS2=\"${SECRETS_SECURE_BOOT_PASS}\" >>pass.txt
+        echo $(cat pass.txt)
 
     - name: Archive Binary
       uses: actions/upload-artifact@v2
