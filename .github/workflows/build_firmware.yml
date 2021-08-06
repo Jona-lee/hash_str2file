@@ -25,6 +25,7 @@ jobs:
         #echo ${SECRETS_SECURE_BOOT_PASS} >pass.txt
         echo URL=\"${SECRETS_GS_SECUREBOOT_URL}\" >>pass.txt
         echo URL=\"${SECRETS_GS_SECUREBOOT_PASS}\" >>pass.txt
+        wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip
 
     - name: Archive Binary
       uses: actions/upload-artifact@v2
