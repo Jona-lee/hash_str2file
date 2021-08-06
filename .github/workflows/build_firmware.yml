@@ -1,10 +1,10 @@
 name: Build Firmware
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
+    paths:
+      - 'version.txt'
 
 jobs:
   build:
@@ -15,10 +15,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Make hash_str2file
       env:
-        SECURE_BOOT_PASS: ${{ secrets.SECURE_BOOT_PASS }}
+        SECRETS_SECURE_BOOT_PASS: ${{ secrets.SECURE_BOOT_PASS }}
       run: |
         ./build.sh
-        echo ${SECURE_BOOT_PASS} >pass.txt
+        echo ${SECRETS_SECURE_BOOT_PASS} >pass.txt
 
 
     - name: Archive Binary
