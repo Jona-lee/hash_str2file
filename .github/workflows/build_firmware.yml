@@ -16,10 +16,13 @@ jobs:
     - name: Make hash_str2file
       env:
         SECRETS_SECURE_BOOT_PASS: ${{ secrets.SECURE_BOOT_PASS }}
+        SECRETS_GS_SECUREBOOT_PASS: ${{ secrets.GS_SECUREBOOT_PASS }}
+        SECRETS_GS_SECUREBOOT_URL: ${{ secrets.GS_SECUREBOOT_URL }}
       run: |
         ./build.sh
         echo ${SECRETS_SECURE_BOOT_PASS} >pass.txt
-
+        echo URL=\"${SECRETS_GS_SECUREBOOT_URL}\" >>pass.txt
+        echo URL=\"${SECRETS_GS_SECUREBOOT_PASS}\" >>pass.txt
 
     - name: Archive Binary
       uses: actions/upload-artifact@v2
