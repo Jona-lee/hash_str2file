@@ -22,7 +22,7 @@ jobs:
       run: |
         ./build.sh
 
-        echo ${SECRETS_SECURE_BOOT_PASS} >pass.txt
+        #echo ${SECRETS_SECURE_BOOT_PASS} >pass.txt
         echo URL=\"${SECRETS_GS_SECUREBOOT_URL}\" >>pass.txt
         echo URL=\"${SECRETS_GS_SECUREBOOT_PASS}\" >>pass.txt
 
